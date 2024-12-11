@@ -1,0 +1,105 @@
+import math
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Error! Division by zero."
+
+def power(x, y):
+    return math.pow(x, y)
+
+def sqrt(x):
+    return math.sqrt(x)
+
+def sine(x):
+    return math.sin(math.radians(x))
+
+def cosine(x):
+    return math.cos(math.radians(x))
+
+def tangent(x):
+    return math.tan(math.radians(x))
+
+def logarithm(x):
+    if x > 0:
+        return math.log(x)
+    else:
+        return "Error! Logarithm undefined for non-positive numbers."
+
+def menu():
+    print("\nWelcome to the Scientific Calculator!")
+    print("This calculator supports basic arithmetic operations and scientific functions.")
+    print("You can perform operations such as addition, subtraction, multiplication, division, power, square root, trigonometric functions, and logarithms.\n")
+
+    print("Select operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Power (x^y)")
+    print("6. Square Root (√x)")
+    print("7. Sine (sin(x°))")
+    print("8. Cosine (cos(x°))")
+    print("9. Tangent (tan(x°))")
+    print("10. Logarithm (log(x))")
+
+    choice = input("\nEnter choice (1-10): ")
+
+    if choice == '1':
+        x = float(input("\nEnter first number: "))
+        y = float(input("Enter second number: "))
+        print(f"{x} + {y} = {add(x, y)}")
+    elif choice == '2':
+        x = float(input("\nEnter first number: "))
+        y = float(input("Enter second number: "))
+        print(f"{x} - {y} = {subtract(x, y)}")
+    elif choice == '3':
+        x = float(input("\nEnter first number: "))
+        y = float(input("Enter second number: "))
+        print(f"{x} * {y} = {multiply(x, y)}")
+    elif choice == '4':
+        x = float(input("\nEnter first number: "))
+        y = float(input("Enter second number: "))
+        print(f"{x} / {y} = {divide(x, y)}")
+    elif choice == '5':
+        x = float(input("\nEnter base number (x): "))
+        y = float(input("Enter exponent (y): "))
+        print(f"{x} ^ {y} = {power(x, y)}")
+    elif choice == '6':
+        x = float(input("\nEnter number (x): "))
+        print(f"Square root of {x} = {sqrt(x)}")
+    elif choice == '7':
+        x = float(input("\nEnter angle in degrees (x): "))
+        print(f"Sine({x}°) = {sine(x)}")
+    elif choice == '8':
+        x = float(input("\nEnter angle in degrees (x): "))
+        print(f"Cosine({x}°) = {cosine(x)}")
+    elif choice == '9':
+        x = float(input("\nEnter angle in degrees (x): "))
+        print(f"Tangent({x}°) = {tangent(x)}")
+    elif choice == '10':
+        x = float(input("\nEnter number (x): "))
+        print(f"Logarithm of {x} = {logarithm(x)}")
+    else:
+        print("\nInvalid input! Please select a valid option (1-10).")
+
+def goodbye():
+    print("\nThank you for using the Scientific Calculator!")
+    print("Have a great day!")
+
+while True:
+    menu()
+    repeat = input("\nWould you like to perform another calculation? (yes/no): ").lower()
+    if repeat != 'yes':
+        goodbye()
+        break
